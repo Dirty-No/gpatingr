@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SLEEP_TIME=$(echo $3 | bc)
+SLEEP_TIME=$(echo "$3" | bc)
 LINK="https://profile.intra.42.fr/users/$1"
 INTRA_PAGE=$(curl $LINK \
 	-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'   \
@@ -48,5 +48,5 @@ while [ 1 ];do
 		fi
 
 	fi
-	sleep $SLEEP_TIME
+	sleep "$SLEEP_TIME"
 done
