@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SLEEP_TIME=$(echo "$3" | bc)
+SLEEP_TIME=$(echo "0$3" | sed 's|[^0-9]||g')
 LINK="https://profile.intra.42.fr/users/$1"
 INTRA_PAGE=$(curl $LINK \
 	-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'   \
