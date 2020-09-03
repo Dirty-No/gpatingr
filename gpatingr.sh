@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SLEEP_TIME=$(echo "0$3" | sed 's|[^0-9]||g')
 LINK="https://profile.intra.42.fr/users/$1"
