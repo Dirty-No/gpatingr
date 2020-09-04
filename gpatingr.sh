@@ -28,6 +28,7 @@ while [ 1 ];do
 	if [ "$PROJECT_PAGE" != "$NEW_PAGE" ] && [ -z "$UPLOAD" ];
 	then
 
+		termux-vibrate
 		OUTPUT=$(echo "$NEW_PAGE" | sed -n '/data-status/,$p' | sed '/project-summary-item/,$d' | sed 's/<[^<>]*>//g' | sed -r '/^\s*$/d')
 		SUCCESS=$(echo "$OUTPUT" | grep "success")
 		FAIL=$(echo "$OUTPUT" | grep "fail")
