@@ -24,7 +24,8 @@ while [ 1 ];do
 		--cookie cookies.txt \
 		--compressed 2> /dev/null)
 
-	if [ "$PROJECT_PAGE" != "$NEW_PAGE" ];
+	UPLOAD=$(echo "$NEW_PAGE" | grep Waiting)
+	if [ "$PROJECT_PAGE" != "$NEW_PAGE" ] && [ -z "$UPLOAD" ];
 	then
 
 		OUTPUT=$(echo "$NEW_PAGE" | sed -n '/data-status/,$p' | sed '/project-summary-item/,$d' | sed 's/<[^<>]*>//g' | sed -r '/^\s*$/d')
